@@ -61,4 +61,8 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+    }
 }
