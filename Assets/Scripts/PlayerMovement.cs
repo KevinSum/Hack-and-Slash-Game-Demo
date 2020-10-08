@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public bool facingRight;
+    public bool inDialogue;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
@@ -22,9 +23,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementInput = getMovementInput();
+        if (!inDialogue)
+            movementInput = getMovementInput();
     }
 
+    // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
         if (movementInput != Vector2.zero)
@@ -61,9 +64,6 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        //Debug.Log("OnCollisionEnter2D");
-    }
-    
+
+
 }
