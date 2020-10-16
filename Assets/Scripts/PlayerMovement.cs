@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public bool inDialogue;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
-    private Animator animator;
+    public Animator animator;
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!inDialogue)
             movementInput = getMovementInput();
+        else
+            animator.SetBool("running", false);
     }
 
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
@@ -64,6 +66,5 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
-
 
 }
