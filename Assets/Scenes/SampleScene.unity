@@ -421,8 +421,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   facingRight: 1
-  inDialogue: 0
   animator: {fileID: 0}
+  NPC_dialogueRunner: {fileID: 0}
+  objectDialogueRunner: {fileID: 0}
 --- !u!95 &367050955
 Animator:
   serializedVersion: 3
@@ -689,6 +690,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1258102740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1258102741}
+  - component: {fileID: 1258102742}
+  m_Layer: 0
+  m_Name: In Memory Variable Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1258102741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258102740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1889608373}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258102742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258102740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultVariables: []
+  debugTextView: {fileID: 0}
 --- !u!1 &1374119118
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnScripts: []
   textLanguage: 
-  variableStorage: {fileID: 1431220473}
+  variableStorage: {fileID: 1258102742}
   dialogueUI: {fileID: 1431220472}
   startNode: 
   startAutomatically: 0
@@ -13075,7 +13121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719218773}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
   m_Name: 
@@ -13099,10 +13145,58 @@ MonoBehaviour:
   optionButtons: []
   onDialogueStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1941047938}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1963145510}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1941047938}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1963145510}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onLineStart:
     m_PersistentCalls:
       m_Calls: []
@@ -13112,7 +13206,7 @@ MonoBehaviour:
   onLineUpdate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790180116}
+      - m_Target: {fileID: 1963145512}
         m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
         m_MethodName: set_text
         m_Mode: 0
@@ -13143,18 +13237,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719218773}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnScripts:
-  - {fileID: 2480198943629176163, guid: 33f171cf20ae30a48b635681e4ee0629, type: 3}
+  yarnScripts: []
   textLanguage: 
-  variableStorage: {fileID: 0}
+  variableStorage: {fileID: 1258102742}
   dialogueUI: {fileID: 1719218776}
   startNode: Start
-  startAutomatically: 1
+  startAutomatically: 0
   onNodeStart:
     m_PersistentCalls:
       m_Calls: []
@@ -15370,6 +15463,7 @@ Transform:
   m_Children:
   - {fileID: 1431220471}
   - {fileID: 1719218774}
+  - {fileID: 1258102741}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15705,9 +15799,7 @@ GameObject:
   - component: {fileID: 1985091339}
   - component: {fileID: 1985091338}
   - component: {fileID: 1985091341}
-  - component: {fileID: 1985091340}
-  - component: {fileID: 1985091343}
-  - component: {fileID: 1985091342}
+  - component: {fileID: 1985091344}
   m_Layer: 0
   m_Name: Mysterious man
   m_TagString: NPC
@@ -15780,32 +15872,6 @@ Transform:
   m_Father: {fileID: 670348653}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1985091340
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985091337}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003946185, y: -0.06391001}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 2.0625}
-    newSize: {x: 0.75, y: 2.0625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.91799057, y: 2.1275387}
-  m_EdgeRadius: 0
 --- !u!61 &1985091341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15832,7 +15898,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.9324088}
   m_EdgeRadius: 0
---- !u!114 &1985091342
+--- !u!114 &1985091344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15841,30 +15907,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985091337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4830ede82e51d60439ff322150071f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 6893e6c63fd670d49a2d1adc4ddb0d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Mysterious Man
+  dialogueRunner: {fileID: 0}
+  dialogueUI: {fileID: 0}
   startNode: Start
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: 33f171cf20ae30a48b635681e4ee0629, type: 3}
---- !u!114 &1985091343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985091337}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0db82e559702e4bbbaafafe9a5aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueHolder: {fileID: 0}
-  NPC_name: Mysterious man
-  dialogueLines:
-  - Hi!
-  - I am Kevin
-  printDelay: 0.01
+  NPC_name: Mysterious Man
   characterSprite: {fileID: 21300000, guid: bc2d4d038813ee340b83a36f112833fb, type: 3}
 --- !u!1 &2013056197
 GameObject:
@@ -15985,12 +16035,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2013056197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0db82e559702e4bbbaafafe9a5aee0, type: 3}
+  m_Script: {fileID: 11500000, guid: e9d3ea51b9106ee4db3145d08aa357ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueHolder: {fileID: 0}
-  NPC_name: 
-  dialogueLines:
-  - I am a sign
-  printDelay: 0.1
-  characterSprite: {fileID: 21300000, guid: e9d10424212ba2244ad1d2befe451b82, type: 3}
+  dialogueRunner: {fileID: 0}
+  dialogueUI: {fileID: 0}
+  startNode: Start
+  yarnScriptToLoad: {fileID: 2480198943629176163, guid: b69ec7838accd8f459bbcb3805e4d7d7, type: 3}

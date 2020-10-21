@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidBody;
     public Animator animator;
     private SpriteRenderer spriteRenderer;
-    private DialogueRunner NPC_dialogueRunner;
-    private DialogueRunner objectDialogueRunner;
+    public DialogueRunner NPC_dialogueRunner;
+    public DialogueRunner objectDialogueRunner;
 
 
     void Start()
@@ -24,11 +24,11 @@ public class PlayerMovement : MonoBehaviour
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        if (!NPC_dialogueRunner.IsDialogueRunning || !objectDialogueRunner.IsDialogueRunning)
+        if (!NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
             movementInput = getMovementInput();
         else
             animator.SetBool("running", false);
