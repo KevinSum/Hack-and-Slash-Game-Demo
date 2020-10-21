@@ -57,9 +57,9 @@ namespace DialogueSystem
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (!playerMovement.inDialogue)
+                    if (1==1)
                     {
-                        playerMovement.inDialogue = true;
+                        //playerMovement.inDialogue = true;
 
                         // Set appropriate textboxes and UIs
                         if (transform.tag == "Object")
@@ -101,7 +101,7 @@ namespace DialogueSystem
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
             }
             dialogueHolder.SetActive(false);
-            playerMovement.inDialogue = false;
+            //playerMovement.inDialogue = false;
         }
 
     } 

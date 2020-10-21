@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public bool facingRight;
-    public bool inDialogue;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     public Animator animator;
     private SpriteRenderer spriteRenderer;
+    private DialogueRunner NPC_dialogueRunner;
+    private DialogueRunner objectDialogueRunner;
+
 
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
+        objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!inDialogue)
+        if (!NPC_dialogueRunner.IsDialogueRunning || !objectDialogueRunner.IsDialogueRunning)
             movementInput = getMovementInput();
         else
             animator.SetBool("running", false);
