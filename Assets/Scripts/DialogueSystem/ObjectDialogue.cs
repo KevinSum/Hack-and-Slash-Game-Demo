@@ -6,9 +6,11 @@ using Yarn.Unity;
 public class ObjectDialogue : Dialogue
 {
     // Start is called before the first frame update
-    void Awake()
+    protected override void Start()
     {
         dialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
         dialogueUI = GameObject.Find("Object Dialogue System").GetComponent<DialogueUI>();
+
+        base.Start();
     }
 }

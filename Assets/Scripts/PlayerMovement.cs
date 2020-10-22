@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public DialogueRunner NPC_dialogueRunner;
     public DialogueRunner objectDialogueRunner;
+    private Controls controls;
 
 
     void Start()
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        controls = new Controls();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
     }
