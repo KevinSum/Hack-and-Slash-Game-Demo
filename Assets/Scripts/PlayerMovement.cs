@@ -17,30 +17,26 @@ public class PlayerMovement : MonoBehaviour
     public DialogueRunner objectDialogueRunner;
     private Controls controls;
 
-
+    private void Awake()
+    {
+        controls = new Controls();
+        controls.Player.Move.performed += input => movementInput = input.ReadValue<Vector2>();
+        controls.Player.Move.canceled += input => movementInput = Vector2.zero;
+    }
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        controls = new Controls();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (!NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
-            movementInput = getMovementInput();
-        else
-            animator.SetBool("running", false);
     }
 
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
-        if (movementInput != Vector2.zero)
+        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
         {
             animator.SetBool("running", true);
             moveCharacter();
@@ -49,10 +45,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("running", false);
         }
-    }
-    Vector2 getMovementInput()
-    {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     void moveCharacter()
@@ -73,6 +65,17 @@ public class PlayerMovement : MonoBehaviour
             facingRight = !facingRight;
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+    }
+
+
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
     }
 
 }
