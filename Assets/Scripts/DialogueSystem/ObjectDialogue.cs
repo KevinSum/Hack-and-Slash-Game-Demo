@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
+// Print dialogue specifically into NPC dialogue UI
 public class ObjectDialogue : Dialogue
 {
     // Start is called before the first frame update

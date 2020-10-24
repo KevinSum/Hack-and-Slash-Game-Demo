@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 
+// Print dialogue specifically into the NPC dialogue UI, as well as displaying name and character sprite
 public class NPC_Dialogue : Dialogue
 {
     [Header("NPC Info")]

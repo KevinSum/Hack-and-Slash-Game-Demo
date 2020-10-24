@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Yarn.Unity;
 
-public class Dialogue : MonoBehaviour
+// System to print dialogue into a dialogue UI when player interacts with something
+public class Dialogue : playerControls
 {
     [Header("Yarn Spinner Stuff")]
     [SerializeField] protected DialogueRunner dialogueRunner;
     [SerializeField] protected DialogueUI dialogueUI;
     [SerializeField] private string startNode = ""; // Name of starting node
-    [SerializeField] private YarnProgram yarnScriptToLoad; // Yarn script to be used (This is optional, as a pre-loaded script could also be used
+    [SerializeField] private YarnProgram yarnScriptToLoad; // Yarn script to be used (This is optional, as a pre-loaded script could also be used)
 
     protected GameObject player;
-    private Controls controls;
 
-    private void Awake()
+    protected override void Awake()
     {
-        controls = new Controls();
+        base.Awake();
         controls.Player.Interact.performed += input => Interact(); // += adds a function delegate to the list of delegates called when, in this case, the interact button is pressed. The input => Interact() stuff is a lambda expression.
     }
 
@@ -29,20 +29,6 @@ public class Dialogue : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    protected virtual void Update()
-    {
-        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (!dialogueRunner.IsDialogueRunning)
-                    dialogueRunner.StartDialogue(startNode);
-                else
-                    dialogueUI.MarkLineComplete();
-            }
-        }
-    }
-
     protected virtual void Interact()
     {
         if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()))
@@ -52,16 +38,5 @@ public class Dialogue : MonoBehaviour
             else
                 dialogueUI.MarkLineComplete();
         }
-    }
-
-    
-    private void OnEnable()
-    {
-        //controls.Player.Enable();
-    }
-
-    private void OnDisable()
-    {
-        //controls.Player.Disable();
     }
 }
