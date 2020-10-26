@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 367050953}
   - component: {fileID: 367050954}
   - component: {fileID: 367050955}
+  - component: {fileID: 367050956}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -397,7 +398,7 @@ BoxCollider2D:
   m_Offset: {x: 0.023585647, y: -0.45031834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.1}
     oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
@@ -420,10 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  facingRight: 1
-  animator: {fileID: 0}
-  NPC_dialogueRunner: {fileID: 0}
-  objectDialogueRunner: {fileID: 0}
 --- !u!95 &367050955
 Animator:
   serializedVersion: 3
@@ -443,6 +440,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &367050956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367050949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c7f8ee4e8b17040bb9e634f315b06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
