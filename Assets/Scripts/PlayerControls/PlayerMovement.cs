@@ -9,10 +9,12 @@ using Yarn.Unity;
 public class PlayerMovement : playerControls
 {
     [SerializeField] public float speed;
+    private bool canMove;
     private SpriteRenderer spriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
+
     private bool facingRight;
     private float facingAngle;
 
@@ -34,13 +36,14 @@ public class PlayerMovement : playerControls
         spriteRenderer = GetComponent<SpriteRenderer>();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
+        canMove = true;
     }
 
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
         // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
-        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
+        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && canMove)
         {
             animator.SetBool("running", true);
             movePlayer();
@@ -80,6 +83,11 @@ public class PlayerMovement : playerControls
                 spriteRenderer.flipX = true;
         }
 
+    }
+
+    public void movementEnabled(bool input)
+    {
+        canMove = input;
     }
 
 }
