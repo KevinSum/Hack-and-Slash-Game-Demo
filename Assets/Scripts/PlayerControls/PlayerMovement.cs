@@ -10,12 +10,13 @@ public class PlayerMovement : playerControls
 {
     [SerializeField] public float speed;
     private bool canMove;
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer playerSpriteRenderer;
+    private SpriteRenderer slashingSpriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
 
-    private bool facingRight;
+    private bool facingLeft;
     private float facingAngle;
 
     private DialogueRunner NPC_dialogueRunner;
@@ -32,8 +33,8 @@ public class PlayerMovement : playerControls
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        slashingSpriteRenderer = this.transform.Find("Sword Slashes").GetComponent<SpriteRenderer>();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
         canMove = true;
@@ -42,6 +43,8 @@ public class PlayerMovement : playerControls
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
+        facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
+
         // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
         if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && canMove)
         {
@@ -66,21 +69,24 @@ public class PlayerMovement : playerControls
 
     void spriteFlipCheck() // Flip sprite if needed
     {
-        facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
-        
-        // If facing angle is between 45 and 135 deg, but facingRight is false, then set it true and flip sprite. And vice-versa for all other angles.
-        if (facingAngle > Mathf.PI / 4 && facingAngle < Mathf.PI * 3 / 4)
+        // If facing angle is between 315 and 405 deg, but facingLeft is false, then set it true and flip sprite. And vice-versa for all other angles.
+        if (facingAngle < - Mathf.PI / 4 && facingAngle > - Mathf.PI * 3 / 4)
         {
-            if (!facingRight)
+            if (!facingLeft)
             {
-                facingRight = true;
-                spriteRenderer.flipX = false;
+                facingLeft = true;
+                playerSpriteRenderer.flipX = true;
+                slashingSpriteRenderer.flipX = true;
             }
-        } else
-        { 
-            if (facingRight)
-                facingRight = false;
-                spriteRenderer.flipX = true;
+        } 
+        else
+        {
+            if (facingLeft)
+            {
+                facingLeft = false;
+                playerSpriteRenderer.flipX = false;
+                slashingSpriteRenderer.flipX = false;
+            }
         }
 
     }
@@ -88,6 +94,11 @@ public class PlayerMovement : playerControls
     public void movementEnabled(bool input)
     {
         canMove = input;
+    }
+
+    public float getFacingAngle()
+    {
+        return facingAngle;
     }
 
 }
