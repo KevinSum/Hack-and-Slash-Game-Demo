@@ -1,124 +1,52 @@
 fileFormatVersion: 2
-guid: 4a667db250548804a8fa1685b6abd12c
+guid: 18315904df8c69a42be57ce4cf8e9fe7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8063282346277296988
-    second: slashes_0
+      213: -8623093969789911747
+    second: spr_charupatk_0
   - first:
-      213: -2597422989511815272
-    second: slashes_1
+      213: -4709611274610053012
+    second: spr_charupatk_1
   - first:
-      213: -6761819904887855054
-    second: slashes_2
+      213: 7470861624710082391
+    second: spr_charupatk_2
   - first:
-      213: 4438612982124849139
-    second: slashes_3
+      213: 2289923696549741593
+    second: spr_charupatk_3
   - first:
-      213: 3955083029625047069
-    second: slashes_4
+      213: 40691298795636125
+    second: spr_charupatk_4
   - first:
-      213: 7450265082538435216
-    second: slashes_5
+      213: -2087320814998482568
+    second: spr_charupatk_5
   - first:
-      213: 2191162120281364339
-    second: slashes_6
+      213: -1193385883409218777
+    second: spr_charupatk_6
   - first:
-      213: 2135314847379861655
-    second: slashes_7
+      213: -7692807059372180173
+    second: spr_charupatk_7
   - first:
-      213: 800542905692854453
-    second: slashes_8
+      213: -6699737117818957930
+    second: spr_charupatk_8
   - first:
-      213: 2141078380536641147
-    second: slashes_9
+      213: 4541200660165425818
+    second: spr_charupatk_9
   - first:
-      213: -1033160576694063754
-    second: slashes_10
+      213: 1424091252178923970
+    second: spr_charupatk_10
   - first:
-      213: -2679123633575819858
-    second: slashes_11
+      213: 1014331024225080516
+    second: spr_charupatk_11
   - first:
-      213: -2572745440000021072
-    second: slashes_0
+      213: -6572971974786291646
+    second: spr_charupatk_12
   - first:
-      213: 7871805862321018855
-    second: slashes_1
+      213: -7323203045147364740
+    second: spr_charupatk_13
   - first:
-      213: -4402678940400678232
-    second: slashes_2
-  - first:
-      213: 8197565202638242512
-    second: slashes_3
-  - first:
-      213: -4314455933861505092
-    second: slashes_4
-  - first:
-      213: -8612607905164315661
-    second: slashes_5
-  - first:
-      213: 4530050818444180630
-    second: slashes_6
-  - first:
-      213: -3057371264009512416
-    second: slashes_7
-  - first:
-      213: 7972078118810503773
-    second: slashes_8
-  - first:
-      213: 6239691643490240969
-    second: slashes_9
-  - first:
-      213: -4715380841961088434
-    second: slashes_10
-  - first:
-      213: -8342248097738156438
-    second: slashes_11
-  - first:
-      213: 419713394458128430
-    second: slashes_12
-  - first:
-      213: 6764266668672209265
-    second: slashes_13
-  - first:
-      213: -7875875630860137730
-    second: slashes_14
-  - first:
-      213: -7892202711853070752
-    second: slashes_15
-  - first:
-      213: 445325277149877488
-    second: slashes_16
-  - first:
-      213: 3374919284882243494
-    second: slashes_17
-  - first:
-      213: 8466112319676552771
-    second: slashes_18
-  - first:
-      213: -5005351637615050883
-    second: slashes_19
-  - first:
-      213: -8558473715504212001
-    second: slashes_20
-  - first:
-      213: -8125864662789264849
-    second: slashes_21
-  - first:
-      213: 2097551126093635509
-    second: slashes_22
-  - first:
-      213: 612964033202525293
-    second: slashes_23
-  - first:
-      213: 3537177416777145834
-    second: slashes_24
-  - first:
-      213: 6962033919068822587
-    second: slashes_25
-  - first:
-      213: 2728458848297520776
-    second: slashes_26
+      213: 7244725554121188905
+    second: spr_charupatk_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,253 +134,316 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slashes_4
+      name: spr_charupatk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 88
+        y: 264
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb7db17ef29ff14c0800000000000000
-      internalID: -4314455933861505092
+      spriteID: d3dfbd9b8bd945880800000000000000
+      internalID: -8623093969789911747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_5
+      name: spr_charupatk_1
       rect:
         serializedVersion: 2
         x: 67
-        y: 88
+        y: 264
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3b5f6edbed97880800000000000000
-      internalID: -8612607905164315661
+      spriteID: c6071b29f7914aeb0800000000000000
+      internalID: -4709611274610053012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_6
+      name: spr_charupatk_2
       rect:
         serializedVersion: 2
         x: 134
-        y: 88
+        y: 264
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c35d7d739fdde30800000000000000
-      internalID: 4530050818444180630
+      spriteID: 75f21fab015dda760800000000000000
+      internalID: 7470861624710082391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_0
+      name: spr_charupatk_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 264
+        width: 67
+        height: 88
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914c89f287177cf10800000000000000
+      internalID: 2289923696549741593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_charupatk_4
       rect:
         serializedVersion: 2
         x: 0
         y: 176
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bdea4f37a5cb4cd0800000000000000
-      internalID: -2572745440000021072
+      spriteID: d95c92a4580909000800000000000000
+      internalID: 40691298795636125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_1
+      name: spr_charupatk_5
       rect:
         serializedVersion: 2
         x: 67
         y: 176
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e75b74a9b54e3d60800000000000000
-      internalID: 7871805862321018855
+      spriteID: 8719cb127c85803e0800000000000000
+      internalID: -2087320814998482568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_2
+      name: spr_charupatk_6
       rect:
         serializedVersion: 2
         x: 134
         y: 176
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aa035184da86e2c0800000000000000
-      internalID: -4402678940400678232
+      spriteID: 7238d63acdd307fe0800000000000000
+      internalID: -1193385883409218777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_3
+      name: spr_charupatk_7
       rect:
         serializedVersion: 2
         x: 201
         y: 176
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d20b568e1a93c170800000000000000
-      internalID: 8197565202638242512
+      spriteID: 33df08cdcb8ad3590800000000000000
+      internalID: -7692807059372180173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_7
+      name: spr_charupatk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 67
+        height: 88
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fc6eb8690c503a0800000000000000
+      internalID: -6699737117818957930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_charupatk_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 88
+        width: 67
+        height: 88
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9afdeaa0f5950f30800000000000000
+      internalID: 4541200660165425818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_charupatk_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 88
+        width: 67
+        height: 88
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1bdddd27363c310800000000000000
+      internalID: 1424091252178923970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_charupatk_11
       rect:
         serializedVersion: 2
         x: 201
         y: 88
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ad936b8090295d0800000000000000
-      internalID: -3057371264009512416
+      spriteID: 4c4189f31b0a31e00800000000000000
+      internalID: 1014331024225080516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_8
+      name: spr_charupatk_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a4d59afc282ae60800000000000000
-      internalID: 7972078118810503773
+      spriteID: 248e34460dc18c4a0800000000000000
+      internalID: -6572971974786291646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_9
+      name: spr_charupatk_13
       rect:
         serializedVersion: 2
         x: 67
         y: 0
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c9853e8d76d79650800000000000000
-      internalID: 6239691643490240969
+      spriteID: c72bee361a1ce5a90800000000000000
+      internalID: -7323203045147364740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slashes_10
+      name: spr_charupatk_14
       rect:
         serializedVersion: 2
         x: 134
         y: 0
         width: 67
         height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a1a3e7b1a9f8eb0800000000000000
-      internalID: -4715380841961088434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slashes_11
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 0
-        width: 67
-        height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a669322ed816a3c80800000000000000
-      internalID: -8342248097738156438
+      spriteID: 926a69cd18f6a8460800000000000000
+      internalID: 7244725554121188905
       vertices: []
       indices: 
       edges: []
