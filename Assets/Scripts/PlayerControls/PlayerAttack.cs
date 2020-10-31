@@ -31,6 +31,7 @@ public class PlayerAttack : playerControls
     private void AttackInput()
     {
         float facingAngle = playerMovement.getFacingAngle() * Mathf.Rad2Deg; // Getting current facing angle and convert to degrees.
+        
         swordSlashes.transform.rotation = Quaternion.Euler(0, 0, -facingAngle);
 
         // This is only to queue state transitions in the animator. The behaviour for what happens when states 

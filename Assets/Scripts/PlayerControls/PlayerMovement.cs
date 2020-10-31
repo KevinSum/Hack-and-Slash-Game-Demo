@@ -43,13 +43,25 @@ public class PlayerMovement : playerControls
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
-        facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
+        if (movementInput.x !=0 || movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
+            facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
 
-        // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
-        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && canMove)
+        Debug.Log(facingAngle * Mathf.Rad2Deg);
+
+        // check if not in dialogue and joystick is moved (not mecesarily player movement. Joystick movement can affect attacking animations).
+        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
         {
-            animator.SetBool("running", true);
-            movePlayer();
+            // Set animator parameters. The animator will play animation based on these (as well as the 'running' bool parameter)
+            animator.SetFloat("moveX", movementInput.x);
+            animator.SetFloat("moveY", movementInput.y);
+
+            // If player can move (e.g. not in attack animation)
+            if (canMove)
+            {
+                animator.SetBool("running", true);
+                movePlayer();
+            }
+            
         }
         else
         {
@@ -62,9 +74,6 @@ public class PlayerMovement : playerControls
         Vector2 currentpos = new Vector2(transform.position.x, transform.position.y);
         playerRigidBody.MovePosition(currentpos + movementInput.normalized * speed * Time.deltaTime);
         spriteFlipCheck();
-        // Set animator parameters. The animator will play animation based on these (as well as the 'running' bool parameter)
-        animator.SetFloat("moveX", movementInput.x);
-        animator.SetFloat("moveY", movementInput.y);
     }
 
     void spriteFlipCheck() // Flip sprite if needed
