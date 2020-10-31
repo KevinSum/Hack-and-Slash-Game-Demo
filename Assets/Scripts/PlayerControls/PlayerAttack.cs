@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class PlayerAttack : playerControls
 {
-    private Animator playerAnimator;
-    private Animator slashingAnimator;
-    private GameObject swordSlashes;
+    private Animator animator;
+    private AnimationClip attackingAnimation;
+    float animationLength;
+    private bool attacking = false;
     private PlayerMovement playerMovement;
+    private Vector2 movementInput;
+
+    private bool attackQueued;
 
     protected override void Awake()
     {
         base.Awake();
         controls.Player.Attack.performed += input => AttackInput();
+        controls.Player.Move.performed += input => movementInput = input.ReadValue<Vector2>();
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        
     }
     void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
-        playerAnimator = GetComponent<Animator>();
-        swordSlashes = GameObject.Find("Sword Slashes");
-        slashingAnimator = swordSlashes.GetComponent<Animator>();
-    }
+        animator = GetComponent<Animator>();
+        animationLength = 0.2f;
+}
 
     // Update is called once per frame
     void Update()
@@ -30,33 +35,26 @@ public class PlayerAttack : playerControls
 
     private void AttackInput()
     {
-        float facingAngle = playerMovement.getFacingAngle() * Mathf.Rad2Deg; // Getting current facing angle and convert to degrees.
-        
-        swordSlashes.transform.rotation = Quaternion.Euler(0, 0, -facingAngle);
 
         // This is only to queue state transitions in the animator. The behaviour for what happens when states 
         // are enetered/exited are found in Attacking1 and Attacking 2 scripts, which are bahaviours in the states 
         // of the same name in the animator
+        animator.SetFloat("moveX", movementInput.x);
+        animator.SetFloat("moveY", movementInput.y);
+        playerMovement.spriteFlipCheck();
 
-        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
         {
-            playerAnimator.SetBool("queueAttack2", true);
-            slashingAnimator.SetBool("queueAttack2", true);
-
+            animator.SetBool("queueAttack2", true);
         }
-        else if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
         {
-            playerAnimator.SetBool("queueAttack1", true);
-            slashingAnimator.SetBool("queueAttack1", true);
+            animator.SetBool("queueAttack1", true);
         }
         else
         {
-            playerAnimator.SetBool("startAttack", true);
-            slashingAnimator.SetBool("startAttack", true);
+            animator.SetBool("startAttack", true);
         }
-
-
-
 
     }
 }

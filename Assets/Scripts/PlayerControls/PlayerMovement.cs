@@ -10,13 +10,12 @@ public class PlayerMovement : playerControls
 {
     [SerializeField] public float speed;
     private bool canMove;
-    private SpriteRenderer playerSpriteRenderer;
-    private SpriteRenderer slashingSpriteRenderer;
+    private SpriteRenderer spriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
 
-    private bool facingLeft;
+    private bool facingRight;
     private float facingAngle;
 
     private DialogueRunner NPC_dialogueRunner;
@@ -33,8 +32,8 @@ public class PlayerMovement : playerControls
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerSpriteRenderer = GetComponent<SpriteRenderer>();
-        slashingSpriteRenderer = this.transform.Find("Sword Slashes").GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
         canMove = true;
@@ -46,10 +45,9 @@ public class PlayerMovement : playerControls
         if (movementInput.x !=0 || movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
             facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
 
-        Debug.Log(facingAngle * Mathf.Rad2Deg);
+        // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
+        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && canMove)
 
-        // check if not in dialogue and joystick is moved (not mecesarily player movement. Joystick movement can affect attacking animations).
-        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning)
         {
             // Set animator parameters. The animator will play animation based on these (as well as the 'running' bool parameter)
             animator.SetFloat("moveX", movementInput.x);
@@ -76,26 +74,23 @@ public class PlayerMovement : playerControls
         spriteFlipCheck();
     }
 
-    void spriteFlipCheck() // Flip sprite if needed
+    public void spriteFlipCheck() // Flip sprite if needed
     {
-        // If facing angle is between 315 and 405 deg, but facingLeft is false, then set it true and flip sprite. And vice-versa for all other angles.
-        if (facingAngle < - Mathf.PI / 4 && facingAngle > - Mathf.PI * 3 / 4)
+        facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
+        
+        // If facing angle is between 45 and 135 deg, but facingRight is false, then set it true and flip sprite. And vice-versa for all other angles.
+        if (facingAngle > Mathf.PI / 4 && facingAngle < Mathf.PI * 3 / 4)
         {
-            if (!facingLeft)
+            if (!facingRight)
             {
-                facingLeft = true;
-                playerSpriteRenderer.flipX = true;
-                slashingSpriteRenderer.flipX = true;
+                facingRight = true;
+                spriteRenderer.flipX = false;
             }
-        } 
-        else
-        {
-            if (facingLeft)
-            {
-                facingLeft = false;
-                playerSpriteRenderer.flipX = false;
-                slashingSpriteRenderer.flipX = false;
-            }
+        } else
+        { 
+            if (facingRight)
+                facingRight = false;
+                spriteRenderer.flipX = true;
         }
 
     }
@@ -103,11 +98,6 @@ public class PlayerMovement : playerControls
     public void movementEnabled(bool input)
     {
         canMove = input;
-    }
-
-    public float getFacingAngle()
-    {
-        return facingAngle;
     }
 
 }
