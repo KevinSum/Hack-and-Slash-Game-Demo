@@ -10,6 +10,7 @@ public class PlayerAttack : playerControls
     private bool attacking = false;
     private PlayerMovement playerMovement;
     private Vector2 movementInput;
+    private Rigidbody2D rigidbody;
 
     private bool attackQueued;
 
@@ -19,6 +20,7 @@ public class PlayerAttack : playerControls
         controls.Player.Attack.performed += input => AttackInput();
         controls.Player.Move.performed += input => movementInput = input.ReadValue<Vector2>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        rigidbody = GetComponent<Rigidbody2D>();
         
     }
     void Start()
@@ -42,6 +44,9 @@ public class PlayerAttack : playerControls
         animator.SetFloat("moveX", movementInput.x);
         animator.SetFloat("moveY", movementInput.y);
         playerMovement.spriteFlipCheck();
+
+        Vector2 direction = new Vector2(movementInput.x, movementInput.y);
+        rigidbody.AddForce(direction, ForceMode2D.Impulse);
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
         {

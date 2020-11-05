@@ -74,7 +74,7 @@ public class PlayerMovement : playerControls
         spriteFlipCheck();
     }
 
-    public void spriteFlipCheck() // Flip sprite if needed
+    public void spriteFlipCheck() // Flip sprite if needed. Hopefully can remove this in final version
     {
         facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
         

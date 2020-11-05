@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: 3551d340a2e3c99428b939c3651e0dd4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5581168324482991545
+    second: spr_CharWalkDownShield_0
+  - first:
+      213: 268952003357818868
+    second: spr_CharWalkDownShield_1
+  - first:
+      213: -6233526551107469494
+    second: spr_CharWalkDownShield_2
+  - first:
+      213: 7945038646947198144
+    second: spr_CharWalkDownShield_3
+  - first:
+      213: -4779856487701029685
+    second: spr_CharWalkDownShield_4
+  - first:
+      213: 5346930746145542884
+    second: spr_CharWalkDownShield_5
+  - first:
+      213: -3966614666718044321
+    second: spr_CharWalkDownShield_6
+  - first:
+      213: 3113163457550298007
+    second: spr_CharWalkDownShield_7
+  - first:
+      213: -2098247938492441257
+    second: spr_CharWalkDownShield_8
+  - first:
+      213: -3261263264818908076
+    second: spr_CharWalkDownShield_9
+  - first:
+      213: 944682901507673298
+    second: spr_CharWalkDownShield_10
+  - first:
+      213: 6693218077607594314
+    second: spr_CharWalkDownShield_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b58874550b447d40800000000000000
+      internalID: 5581168324482991545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 70
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffb5cd0c628bb300800000000000000
+      internalID: 268952003357818868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 70
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ff54fd0a01e79a0800000000000000
+      internalID: -6233526551107469494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 70
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4b9060e82724e60800000000000000
+      internalID: 7945038646947198144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccdb3569d98aadb0800000000000000
+      internalID: -4779856487701029685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 35
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e29e923f2d143a40800000000000000
+      internalID: 5346930746145542884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f9a650af0c3f8c0800000000000000
+      internalID: -3966614666718044321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_7
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 35
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b230f9bad243b20800000000000000
+      internalID: 3113163457550298007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d567fed9681e2e0800000000000000
+      internalID: -2098247938492441257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454307de65aadb2d0800000000000000
+      internalID: -3261263264818908076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc00c108103c1d00800000000000000
+      internalID: 944682901507673298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_CharWalkDownShield_11
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a490600216613ec50800000000000000
+      internalID: 6693218077607594314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
