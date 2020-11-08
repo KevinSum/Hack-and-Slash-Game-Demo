@@ -1,11 +1,28 @@
 title: Start
 tags: 
 colorID: 0
-position: 859,408
+position: 875,268
 ---
-Hello stranger.
-Where did you come from? 
--> I don't know.. 
--> I came to fight the monster
-I'm not sure how you came here, but I'd be weary about going ahead. There's quite the fearsome monster ahead...
+$should_see_ship
+===
+title: NPC
+tags: 
+colorID: 0
+position: 875,268
+---
+<<if visited("NPC") is false>>
+    Hello stranger.
+    <<AutoContinue>> 
+    Where did you come from? 
+    -> I don't know... 
+        Hmmm..
+        I don't know how you got here, but watch your step. There's a monster up ahead.
+    -> I came to fight the monster
+        I see. Be careful. The monster is a force to be reckoned with.
+    <<set $visited to true>>
+<<endif>>
+
+<<if visited("NPC")>>
+    Good luck
+<<endif>>
 ===

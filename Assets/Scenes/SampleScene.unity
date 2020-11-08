@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &91389460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 376.31934, y: 72.99179}
-  m_SizeDelta: {x: 130, y: 134.9361}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.99999994, y: -0.00000007636845}
 --- !u!114 &91389461
 MonoBehaviour:
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -20.822681}
-  m_SizeDelta: {x: 110, y: 23.633934}
+  m_AnchoredPosition: {x: 39.5, y: -20.822681}
+  m_SizeDelta: {x: 59, y: 23.633934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277696412
 MonoBehaviour:
@@ -347,8 +347,8 @@ GameObject:
   - component: {fileID: 360937476}
   - component: {fileID: 360937475}
   - component: {fileID: 360937477}
-  - component: {fileID: 360937478}
   - component: {fileID: 360937479}
+  - component: {fileID: 360937478}
   m_Layer: 5
   m_Name: Name Holder
   m_TagString: Untagged
@@ -374,7 +374,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -511.2552, y: 119.8641}
-  m_SizeDelta: {x: 0, y: 46.871475}
+  m_SizeDelta: {x: 84, y: 46.871475}
   m_Pivot: {x: 0.00000022351742, y: 1}
 --- !u!114 &360937475
 MonoBehaviour:
@@ -864,7 +864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &543923882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -882,7 +882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -93.290726}
+  m_AnchoredPosition: {x: 65, y: -46.645367}
   m_SizeDelta: {x: 130, y: 41.645363}
   m_Pivot: {x: 0.5, y: 0.99999994}
 --- !u!114 &543923883
@@ -1011,7 +1011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &635987683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1029,8 +1029,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -46.645367}
-  m_SizeDelta: {x: 130, y: 41.645363}
+  m_AnchoredPosition: {x: 39.5, y: -0.0000038146973}
+  m_SizeDelta: {x: 79, y: 41.645363}
   m_Pivot: {x: 0.5, y: 0.99999994}
 --- !u!114 &635987684
 MonoBehaviour:
@@ -1289,8 +1289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -20.822681}
-  m_SizeDelta: {x: 110, y: 23.633934}
+  m_AnchoredPosition: {x: 39.5, y: -20.822681}
+  m_SizeDelta: {x: 59, y: 23.633934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060329905
 MonoBehaviour:
@@ -1454,6 +1454,7 @@ GameObject:
   - component: {fileID: 1431220470}
   - component: {fileID: 1431220472}
   - component: {fileID: 1431220473}
+  - component: {fileID: 1431220474}
   m_Layer: 0
   m_Name: NPC Dialogue System
   m_TagString: Untagged
@@ -1484,7 +1485,19 @@ MonoBehaviour:
       m_Calls: []
   onNodeComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1431220474}
+        m_TargetAssemblyTypeName: ExtraDialogueCommands, Assembly-CSharp
+        m_MethodName: NodeComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -1548,7 +1561,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 360937478}
-        m_TargetAssemblyTypeName: fitTextboxToText, Assembly-CSharp
+        m_TargetAssemblyTypeName: FitTextboxToText, Assembly-CSharp
         m_MethodName: updateBoxSize
         m_Mode: 1
         m_Arguments:
@@ -1573,7 +1586,19 @@ MonoBehaviour:
         m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 790180114}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onLineStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1621,6 +1646,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables: []
   debugTextView: {fileID: 0}
+--- !u!114 &1431220474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431220469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8d1339a5ab38441840c8ac5058df4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441710385
 GameObject:
   m_ObjectHideFlags: 0
@@ -13853,6 +13890,7 @@ GameObject:
   - component: {fileID: 1719218777}
   - component: {fileID: 1719218776}
   - component: {fileID: 1719218775}
+  - component: {fileID: 1719218778}
   m_Layer: 0
   m_Name: Object Dialogue System
   m_TagString: Untagged
@@ -13944,7 +13982,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1963145510}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -14006,17 +14044,41 @@ MonoBehaviour:
   textLanguage: 
   variableStorage: {fileID: 1258102742}
   dialogueUI: {fileID: 1719218776}
-  startNode: Start
+  startNode: 
   startAutomatically: 0
   onNodeStart:
     m_PersistentCalls:
       m_Calls: []
   onNodeComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719218778}
+        m_TargetAssemblyTypeName: ExtraDialogueCommands, Assembly-CSharp
+        m_MethodName: NodeComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1719218778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719218773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8d1339a5ab38441840c8ac5058df4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1782549356
 GameObject:
   m_ObjectHideFlags: 0
@@ -16146,10 +16208,10 @@ RectTransform:
   m_Father: {fileID: 360937474}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 21.960342}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 42, y: -20.980171}
+  m_SizeDelta: {x: 44, y: 21.960342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857058649
 MonoBehaviour:
@@ -16323,7 +16385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1941047939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16685,7 +16747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 0}
   dialogueUI: {fileID: 0}
-  startNode: Start
+  startNode: NPC
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: 33f171cf20ae30a48b635681e4ee0629, type: 3}
   NPC_name: Mysterious Man
   characterSprite: {fileID: 21300000, guid: bc2d4d038813ee340b83a36f112833fb, type: 3}
@@ -16834,7 +16896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2115700083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16852,8 +16914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -0.000002482257}
-  m_SizeDelta: {x: 130, y: 41.645363}
+  m_AnchoredPosition: {x: 39.5, y: -0.0000038146973}
+  m_SizeDelta: {x: 79, y: 41.645363}
   m_Pivot: {x: 0.5, y: 0.99999994}
 --- !u!114 &2115700084
 MonoBehaviour:

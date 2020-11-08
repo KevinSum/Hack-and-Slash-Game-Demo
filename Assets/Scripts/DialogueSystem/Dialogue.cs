@@ -37,6 +37,8 @@ public class Dialogue : playerControls
                 dialogueRunner.StartDialogue(startNode);
             else
                 dialogueUI.MarkLineComplete();
+
+
         }
     }
 }
