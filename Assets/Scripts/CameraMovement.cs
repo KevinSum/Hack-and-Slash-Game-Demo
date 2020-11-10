@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 minCameraPosition;
     void Start()
     {
-        
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Late update always comes after all other updates. 
