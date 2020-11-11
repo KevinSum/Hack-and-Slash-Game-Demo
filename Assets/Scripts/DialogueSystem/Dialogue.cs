@@ -23,6 +23,7 @@ public class Dialogue : playerControls
 
     protected virtual void Start()
     {
+        dialogueRunner.Clear(); // Clear all loaded nodes upon start. This is needed, as the dialogueRunner will try to load the same nodes when entering a scene multiple times.
         if (yarnScriptToLoad != null)
             dialogueRunner.Add(yarnScriptToLoad);
 
