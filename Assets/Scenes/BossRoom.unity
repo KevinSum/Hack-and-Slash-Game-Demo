@@ -14322,6 +14322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5478392976958909171, guid: 24246af33e325024e8ecda5372859d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5478392976958909175, guid: 24246af33e325024e8ecda5372859d28, type: 3}
       propertyPath: m_Name
       value: Player
@@ -14388,6 +14392,14 @@ PrefabInstance:
     - target: {fileID: 728118105951238677, guid: c5cad99d2d452be419292e96339a8050, type: 3}
       propertyPath: sceneToLoad
       value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 728118105951238677, guid: c5cad99d2d452be419292e96339a8050, type: 3}
+      propertyPath: newPlayerPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 728118105951238677, guid: c5cad99d2d452be419292e96339a8050, type: 3}
+      propertyPath: newPlayerPosition.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3605702216402378975, guid: c5cad99d2d452be419292e96339a8050, type: 3}
       propertyPath: m_Name
