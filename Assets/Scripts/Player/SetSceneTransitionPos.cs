@@ -23,11 +23,7 @@ public class SetSceneTransitionPos : MonoBehaviour
         // Check if object has been destroyed. For some reason, this class will persist, even if destroyed.
         if (this)
         {
-            //cinemachineCamera.GetComponent<CinemachineVirtualCamera>().enabled = false;
             this.transform.position = initialPos;
-
-
-            //cinemachineCamera.GetComponent<CinemachineVirtualCamera>().enabled = true;
         }
             
 
