@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Change size of text box to fit text length when text changes
 public class FitTextboxToText : MonoBehaviour
 {
-    public void UpdateBoxSize()
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void updateBoxSize()
     { 
         Canvas.ForceUpdateCanvases();
     }
