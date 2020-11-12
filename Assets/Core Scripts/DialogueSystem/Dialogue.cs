@@ -14,6 +14,7 @@ public class Dialogue : playerControls
     [SerializeField] private YarnProgram yarnScriptToLoad; // Yarn script to be used (This is optional, as a pre-loaded script could also be used)
 
     protected GameObject player;
+    protected Animator playerAnimator; // For accessing parameters
 
     protected override void Awake()
     {
@@ -28,11 +29,13 @@ public class Dialogue : playerControls
             dialogueRunner.Add(yarnScriptToLoad);
 
         player = GameObject.Find("Player");
+        playerAnimator = player.GetComponent<Animator>();
     }
 
     protected virtual void Interact()
     {
-        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()))
+        // Check if touching an object with dialogue attached or already in dialogue (latter is important for cutscenes, since player isn't touching anyone)
+        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()) || playerAnimator.GetBool("inDialogue")) 
         {
             StartDialogue();
         }
@@ -41,8 +44,15 @@ public class Dialogue : playerControls
     public virtual void StartDialogue()
     {
         if (!dialogueRunner.IsDialogueRunning)
+        {
+            playerAnimator.SetBool("inDialogue", true);
             dialogueRunner.StartDialogue(startNode);
+        }
         else
+        {
             dialogueUI.MarkLineComplete();
+            if (!dialogueRunner.IsDialogueRunning)
+                playerAnimator.SetBool("inDialogue", false);
+        }
     }
 }

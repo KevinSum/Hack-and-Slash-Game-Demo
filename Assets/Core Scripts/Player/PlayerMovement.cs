@@ -9,7 +9,6 @@ using Yarn.Unity;
 public class PlayerMovement : playerControls
 {
     [SerializeField] public float speed;
-    private bool canMove;
     private SpriteRenderer spriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
@@ -36,7 +35,6 @@ public class PlayerMovement : playerControls
         spriteRenderer = GetComponent<SpriteRenderer>();
         NPC_dialogueRunner = GameObject.Find("NPC Dialogue System").GetComponent<DialogueRunner>();
         objectDialogueRunner = GameObject.Find("Object Dialogue System").GetComponent<DialogueRunner>();
-        canMove = true;
     }
 
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
@@ -46,7 +44,7 @@ public class PlayerMovement : playerControls
             facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
 
         // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
-        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && canMove)
+        if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && animator.GetBool("canMove"))
 
         {
             // Set animator parameters. The animator will play animation based on these (as well as the 'running' bool parameter)
@@ -54,7 +52,7 @@ public class PlayerMovement : playerControls
             animator.SetFloat("moveY", movementInput.y);
 
             // If player can move (e.g. not in attack animation)
-            if (canMove)
+            if (animator.GetBool("canMove"))
             {
                 animator.SetBool("running", true);
                 movePlayer();
@@ -95,9 +93,9 @@ public class PlayerMovement : playerControls
 
     }
 
-    public void movementEnabled(bool input)
-    {
-        canMove = input;
-    }
+    //public void movementEnabled(bool input)
+    //{
+        //input = input;
+    //}
 
 }

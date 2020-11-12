@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 // Set initial position during scene transition
 public class SetSceneTransitionPos : MonoBehaviour
 {
+    private bool firstLoad = true; // Check if player has been to other scenes.
     [SerializeField] private Vector2 initialPos;
     private GameObject cinemachineCamera;
     private GameObject camera;
@@ -23,7 +24,10 @@ public class SetSceneTransitionPos : MonoBehaviour
         // Check if object has been destroyed. For some reason, this class will persist, even if destroyed.
         if (this)
         {
-            this.transform.position = initialPos;
+            if (!firstLoad) // Set position only if this is not the first scene loaded. This helps with testing (setting player pos in certain positions)
+                this.transform.position = initialPos;
+            else
+                firstLoad = false;
         }
             
 

@@ -14214,6 +14214,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &466203245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5478392976958909175, guid: 24246af33e325024e8ecda5372859d28, type: 3}
+  m_PrefabInstance: {fileID: 2137496682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &466203246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466203245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 783eb93c35577674ab62c46b481766cd, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2137496683}
+          m_TargetAssemblyTypeName: PlayerState, Assembly-CSharp
+          m_MethodName: setInDialogue
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &769762149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4093362112828396549, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
+  m_PrefabInstance: {fileID: 808495050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04317fce65da54f4997a5c4465b4e93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &769762150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3499379302771785496, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
+  m_PrefabInstance: {fileID: 808495050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &808495050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14281,6 +14338,8 @@ GameObject:
   m_Component:
   - component: {fileID: 865320646}
   - component: {fileID: 865320645}
+  - component: {fileID: 865320647}
+  - component: {fileID: 865320648}
   m_Layer: 0
   m_Name: Cutscene
   m_TagString: Untagged
@@ -14309,6 +14368,8 @@ PlayableDirector:
     value: {fileID: 5478392978146479051}
   - key: {fileID: 718746530888514412, guid: e85bea5de97161d498fbdb04bc568a51, type: 2}
     value: {fileID: 1238049066}
+  - key: {fileID: -3962573345905110214, guid: e85bea5de97161d498fbdb04bc568a51, type: 2}
+    value: {fileID: 466203246}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &865320646
@@ -14319,12 +14380,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865320644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9210174, y: -1.8427477, z: -11.688067}
+  m_LocalPosition: {x: 0.33, y: -8.98, z: -11.688067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &865320647
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865320644}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6620978, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3241959, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &865320648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865320644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa4b1519b8747b4195a9c7ecd6ce4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1238049066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14343,13 +14442,13 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5478392978146479057}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+        - m_Target: {fileID: 5478392978146479059}
+          m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+          m_MethodName: StartDialogue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -16880,6 +16979,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24246af33e325024e8ecda5372859d28, type: 3}
+--- !u!114 &2137496683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8397119562212231441, guid: 24246af33e325024e8ecda5372859d28, type: 3}
+  m_PrefabInstance: {fileID: 2137496682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466203245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edc0a4f77b7aee4eb99c84477aea43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &5478392978146479049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17026,6 +17136,7 @@ GameObject:
   - component: {fileID: 5478392978146479051}
   - component: {fileID: 1238049066}
   - component: {fileID: 5478392978146479058}
+  - component: {fileID: 5478392978146479059}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Player
@@ -17045,3 +17156,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37228976f84de241abbeeb43c481bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5478392978146479059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478392978146479057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d3ea51b9106ee4db3145d08aa357ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 769762150}
+  dialogueUI: {fileID: 769762149}
+  startNode: Start
+  yarnScriptToLoad: {fileID: 2480198943629176163, guid: e16af4dac56df444c8eaa4d8bcef7e3f, type: 3}
