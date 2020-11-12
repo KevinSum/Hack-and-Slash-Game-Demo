@@ -34,12 +34,15 @@ public class Dialogue : playerControls
     {
         if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()))
         {
-            if (!dialogueRunner.IsDialogueRunning)
-                dialogueRunner.StartDialogue(startNode);
-            else
-                dialogueUI.MarkLineComplete();
-
-
+            StartDialogue();
         }
+    }
+
+    protected virtual void StartDialogue()
+    {
+        if (!dialogueRunner.IsDialogueRunning)
+            dialogueRunner.StartDialogue(startNode);
+        else
+            dialogueUI.MarkLineComplete();
     }
 }
