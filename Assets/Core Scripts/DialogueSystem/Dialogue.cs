@@ -38,7 +38,7 @@ public class Dialogue : playerControls
         }
     }
 
-    protected virtual void StartDialogue()
+    public virtual void StartDialogue()
     {
         if (!dialogueRunner.IsDialogueRunning)
             dialogueRunner.StartDialogue(startNode);
