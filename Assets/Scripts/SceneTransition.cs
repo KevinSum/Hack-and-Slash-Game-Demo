@@ -18,7 +18,6 @@ public class SceneTransition : MonoBehaviour
             playerInitialPos = player.GetComponent<SetSceneTransitionPos>();
             playerInitialPos.SetInitialPos(newPlayerPosition);
             SceneManager.LoadScene(sceneToLoad);
-
         }
     }
 }
