@@ -14368,6 +14368,7 @@ GameObject:
   - component: {fileID: 865320645}
   - component: {fileID: 865320647}
   - component: {fileID: 865320648}
+  - component: {fileID: 865320649}
   m_Layer: 0
   m_Name: Cutscene
   m_TagString: Untagged
@@ -14397,7 +14398,7 @@ PlayableDirector:
   - key: {fileID: 718746530888514412, guid: e85bea5de97161d498fbdb04bc568a51, type: 2}
     value: {fileID: 1238049066}
   - key: {fileID: -3962573345905110214, guid: e85bea5de97161d498fbdb04bc568a51, type: 2}
-    value: {fileID: 466203246}
+    value: {fileID: 865320649}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &865320646
@@ -14452,6 +14453,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa4b1519b8747b4195a9c7ecd6ce4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &865320649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865320644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d9af5c80d45efec43b50236aa857d4f1, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 865320648}
+          m_TargetAssemblyTypeName: Cutscene, Assembly-CSharp
+          m_MethodName: SetInCutscene
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1082999689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7226561520797977828, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}

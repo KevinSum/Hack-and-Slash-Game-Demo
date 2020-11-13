@@ -19,8 +19,9 @@ public class Cutscene : MonoBehaviour
             playableDirector.Play();
     }
 
-    public void setMoveable(bool input)
+    public void SetInCutscene(bool input)
     {
-        playerAnimator.SetBool("canMove", input);
+        playerAnimator.SetBool("canMove", !input);
+        playerAnimator.SetBool("inDialogue", input);
     }
 }

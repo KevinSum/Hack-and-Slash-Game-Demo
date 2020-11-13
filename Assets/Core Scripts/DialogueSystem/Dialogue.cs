@@ -46,6 +46,7 @@ public class Dialogue : playerControls
     private void Update()
     {
         // If we've reached the end of the dialogue, set moveable.
+        // Note: Local inDialogue bool is to make sure we don't accidently set of the other dialogue boxes (hence why it's checked here). The animator bool is to be used for other classes (e.g. can player still turn).
         if (!dialogueRunner.IsDialogueRunning && inDialogue)
         {
             inDialogue = false;
