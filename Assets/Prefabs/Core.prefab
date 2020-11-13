@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 2175933440116958728}
   - component: {fileID: 6732306516807494229}
   m_Layer: 0
-  m_Name: Cinemachine Camera
+  m_Name: Cinemachine Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +987,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 100
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
