@@ -12,9 +12,11 @@ public class Dialogue : playerControls
     [SerializeField] protected DialogueUI dialogueUI;
     [SerializeField] private string startNode = ""; // Name of starting node
     [SerializeField] private YarnProgram yarnScriptToLoad; // Yarn script to be used (This is optional, as a pre-loaded script could also be used)
+    private bool inDialogue;
 
     protected GameObject player;
     protected Animator playerAnimator; // For accessing parameters
+
 
     protected override void Awake()
     {
@@ -35,9 +37,20 @@ public class Dialogue : playerControls
     protected virtual void Interact()
     {
         // Check if touching an object with dialogue attached or already in dialogue (latter is important for cutscenes, since player isn't touching anyone)
-        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()) || playerAnimator.GetBool("inDialogue")) 
+        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()) || inDialogue) 
         {
             StartDialogue();
+        }
+    }
+
+    private void Update()
+    {
+        // If we've reached the end of the dialogue, set moveable.
+        if (!dialogueRunner.IsDialogueRunning && inDialogue)
+        {
+            inDialogue = false;
+            playerAnimator.SetBool("canMove", true);
+            playerAnimator.SetBool("inDialogue", false);
         }
     }
 
@@ -45,16 +58,16 @@ public class Dialogue : playerControls
     {
         if (!dialogueRunner.IsDialogueRunning)
         {
-            playerAnimator.SetBool("inDialogue", true);
+            inDialogue = true;
             playerAnimator.SetBool("canMove", false);
+            playerAnimator.SetBool("inDialogue", true);
             dialogueRunner.StartDialogue(startNode);
         }
         else
         {
-            dialogueUI.MarkLineComplete();
-            if (!dialogueRunner.IsDialogueRunning)
-                playerAnimator.SetBool("inDialogue", false);
-                playerAnimator.SetBool("canMove", true);
+            dialogueUI.MarkLineComplete();   
         }
     }
+
+
 }

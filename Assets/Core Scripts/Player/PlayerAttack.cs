@@ -37,29 +37,31 @@ public class PlayerAttack : playerControls
 
     private void AttackInput()
     {
-
-        // This is only to queue state transitions in the animator. The behaviour for what happens when states 
-        // are enetered/exited are found in Attacking1 and Attacking 2 scripts, which are bahaviours in the states 
-        // of the same name in the animator
-        animator.SetFloat("moveX", movementInput.x);
-        animator.SetFloat("moveY", movementInput.y);
-        playerMovement.spriteFlipCheck();
-
-        Vector2 direction = new Vector2(movementInput.x, movementInput.y);
-        rigidbody.AddForce(direction, ForceMode2D.Impulse);
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
+        // make sure we're not in dialogue or cutscene
+        if (!animator.GetBool("inDialogue"))
         {
-            animator.SetBool("queueAttack2", true);
-        }
-        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
-        {
-            animator.SetBool("queueAttack1", true);
-        }
-        else
-        {
-            animator.SetBool("startAttack", true);
-        }
+            // This is only to queue state transitions in the animator. The behaviour for what happens when states 
+            // are enetered/exited are found in Attacking1 and Attacking 2 scripts, which are bahaviours in the states 
+            // of the same name in the animator
+            animator.SetFloat("moveX", movementInput.x);
+            animator.SetFloat("moveY", movementInput.y);
+            playerMovement.spriteFlipCheck();
 
+            Vector2 direction = new Vector2(movementInput.x, movementInput.y);
+            rigidbody.AddForce(direction, ForceMode2D.Impulse);
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
+            {
+                animator.SetBool("queueAttack2", true);
+            }
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
+            {
+                animator.SetBool("queueAttack1", true);
+            }
+            else
+            {
+                animator.SetBool("startAttack", true);
+            }
+        }
     }
 }
