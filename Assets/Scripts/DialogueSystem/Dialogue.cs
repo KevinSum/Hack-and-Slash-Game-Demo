@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yarn.Unity;
+using UnityEngine.Playables;
 
 // System to print dialogue into a dialogue UI when player interacts with something
 public class Dialogue : playerControls
@@ -16,6 +17,7 @@ public class Dialogue : playerControls
 
     protected GameObject player;
     protected Animator playerAnimator; // For accessing parameters
+    PlayableDirector playableDirector; // For cut scenes. Needs to be reassigned for each cutscene
 
 
     protected override void Awake()
@@ -49,9 +51,16 @@ public class Dialogue : playerControls
         // Note: Local inDialogue bool is to make sure we don't accidently set of the other dialogue boxes (hence why it's checked here). The animator bool is to be used for other classes (e.g. can player still turn).
         if (!dialogueRunner.IsDialogueRunning && inDialogue)
         {
+            // Maybe add line to emit a signal to indicate that cutscene is finished
             inDialogue = false;
             playerAnimator.SetBool("canMove", true);
             playerAnimator.SetBool("inDialogue", false);
+            // Continue cutscene if in cutscene. Empty playableDirectory for the next playableDirectory of the next cutscene
+            if (playableDirector != null)
+            {
+                playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1); // continue cutscene
+                playableDirector = null;
+            }
         }
     }
 
@@ -70,5 +79,10 @@ public class Dialogue : playerControls
         }
     }
 
-
+    public virtual void StartCutsceneDialogue(PlayableDirector playableDirector)
+    {
+        StartDialogue();
+        playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(0); // pause the timeline. playableDirector.pause doesn't save object positions if they move during the cutscene, so set speed to 0 instead.
+        this.playableDirector = playableDirector;
+    }
 }

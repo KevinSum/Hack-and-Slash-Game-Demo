@@ -6,11 +6,13 @@ public class Cutscene : MonoBehaviour
 {
     private PlayableDirector playableDirector;
     private Animator playerAnimator;
+    private BoxCollider2D boxCollider2D;
 
     void Start()
     {
         playableDirector = GetComponent<PlayableDirector>();
         playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +24,12 @@ public class Cutscene : MonoBehaviour
     public void SetInCutscene(bool input)
     {
         playerAnimator.SetBool("canMove", !input);
-        playerAnimator.SetBool("inDialogue", input);
+        playerAnimator.SetBool("inCutscene", input);
     }
+
+    public void disableTrigger()
+    {
+        boxCollider2D.enabled = false;
+    }
+
 }
