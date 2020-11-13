@@ -46,6 +46,7 @@ public class Dialogue : playerControls
         if (!dialogueRunner.IsDialogueRunning)
         {
             playerAnimator.SetBool("inDialogue", true);
+            playerAnimator.SetBool("canMove", false);
             dialogueRunner.StartDialogue(startNode);
         }
         else
@@ -53,6 +54,7 @@ public class Dialogue : playerControls
             dialogueUI.MarkLineComplete();
             if (!dialogueRunner.IsDialogueRunning)
                 playerAnimator.SetBool("inDialogue", false);
+                playerAnimator.SetBool("canMove", true);
         }
     }
 }
