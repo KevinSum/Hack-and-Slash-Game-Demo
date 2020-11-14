@@ -14355,11 +14355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 378.75922
+      value: 434.25848
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1973.1335
+      value: 2262.6392
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17176,6 +17176,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5816633920489306251, guid: f441d07ad79eb474dbb72babb6e69d53, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816633920489306251, guid: f441d07ad79eb474dbb72babb6e69d53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.34
+      objectReference: {fileID: 0}
     - target: {fileID: 5816633921528035552, guid: f441d07ad79eb474dbb72babb6e69d53, type: 3}
       propertyPath: m_Name
       value: Cutscene

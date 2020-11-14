@@ -14770,6 +14770,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 0}
   startNode: NPC
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: 33f171cf20ae30a48b635681e4ee0629, type: 3}
+  interactable: 1
   NPC_name: Mysterious Man
   characterSprite: {fileID: 21300000, guid: bc2d4d038813ee340b83a36f112833fb, type: 3}
 --- !u!1 &2013056197
@@ -14898,6 +14899,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 0}
   startNode: Start
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: b69ec7838accd8f459bbcb3805e4d7d7, type: 3}
+  interactable: 0
 --- !u!1001 &2543055343928589630
 PrefabInstance:
   m_ObjectHideFlags: 0

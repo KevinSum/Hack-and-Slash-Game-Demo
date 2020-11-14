@@ -13,6 +13,7 @@ public class Dialogue : playerControls
     [SerializeField] protected DialogueUI dialogueUI;
     [SerializeField] private string startNode = ""; // Name of starting node
     [SerializeField] private YarnProgram yarnScriptToLoad; // Yarn script to be used (This is optional, as a pre-loaded script could also be used)
+    [SerializeField] private bool interactable;
     private bool inDialogue;
 
     protected GameObject player;
@@ -39,7 +40,7 @@ public class Dialogue : playerControls
     protected virtual void Interact()
     {
         // Check if touching an object with dialogue attached or already in dialogue (latter is important for cutscenes, since player isn't touching anyone)
-        if (this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()) || inDialogue) 
+        if ((this.GetComponent<Collider2D>().IsTouching(player.GetComponent<Collider2D>()) && interactable) || inDialogue) 
         {
             StartDialogue();
         }

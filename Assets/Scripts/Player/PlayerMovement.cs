@@ -93,9 +93,9 @@ public class PlayerMovement : playerControls
 
     }
 
-    //public void movementEnabled(bool input)
-    //{
-        //input = input;
-    //}
+    float getFacingAngle()
+    {
+        return facingAngle;
+    }
 
 }

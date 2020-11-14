@@ -16,9 +16,9 @@ position: 875,268
     Where did you come from? 
     -> I don't know... 
         Hmmm..
-        I don't know how you got here, but watch your step. There's a monster up ahead.
-    -> I came to fight the monster
-        I see. Be careful. The monster is a force to be reckoned with.
+        I don't know how you got here, but watch your step. There's a boi up ahead.
+    -> I came to fight the boi
+        I see. Be careful. The boi is a force to be reckoned with.
     <<set $visited to true>>
 <<endif>>
 

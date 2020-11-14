@@ -64,4 +64,10 @@ public class PlayerAttack : playerControls
             }
         }
     }
+
+    // Enable attack hitboxes according to facing direction
+    IEnumerator enableHitbox()
+    {
+
+    }
 }
