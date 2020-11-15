@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerAttack : playerControls
 {
     private Animator animator;
-    private AnimationClip attackingAnimation;
-    float animationLength;
-    private bool attacking = false;
     private PlayerMovement playerMovement;
     private Vector2 movementInput;
     private Rigidbody2D rigidbody;
+    private float facingAngle;
 
-    private bool attackQueued;
+    [SerializeField] private GameObject upHitbox;
+    [SerializeField] private GameObject leftHitbox;
+    [SerializeField] private GameObject rightHitbox;
+    [SerializeField] private GameObject downHitbox;
+
 
     protected override void Awake()
     {
@@ -21,13 +23,11 @@ public class PlayerAttack : playerControls
         controls.Player.Move.performed += input => movementInput = input.ReadValue<Vector2>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         rigidbody = GetComponent<Rigidbody2D>();
-        
     }
     void Start()
     {
         animator = GetComponent<Animator>();
-        animationLength = 0.2f;
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,6 +46,7 @@ public class PlayerAttack : playerControls
             animator.SetFloat("moveX", movementInput.x);
             animator.SetFloat("moveY", movementInput.y);
             playerMovement.spriteFlipCheck();
+            StartCoroutine(enableHitbox());
 
             Vector2 direction = new Vector2(movementInput.x, movementInput.y);
             rigidbody.AddForce(direction, ForceMode2D.Impulse);
@@ -68,6 +69,36 @@ public class PlayerAttack : playerControls
     // Enable attack hitboxes according to facing direction
     IEnumerator enableHitbox()
     {
+        facingAngle = playerMovement.getFacingAngle();
+
+        if (-Mathf.PI / 4 < facingAngle && facingAngle < Mathf.PI / 4) // facing up
+        {
+            upHitbox.SetActive(true);
+            Debug.Log("Up attack");
+            yield return 0;// Wait 1 frame
+            upHitbox.SetActive(false);
+        }
+        if (-Mathf.PI * 3 / 4 < facingAngle && facingAngle < -Mathf.PI / 4) // facing left
+        {
+            leftHitbox.SetActive(true);
+            Debug.Log("Left attack");
+            yield return 0;// Wait 1 frame
+            leftHitbox.SetActive(false);
+        }
+        if (Mathf.PI / 4 < facingAngle && facingAngle < Mathf.PI * 3 / 4) // facing right
+        {
+            rightHitbox.SetActive(true);
+            Debug.Log("Right attack");
+            yield return 0;// Wait 1 frame
+            rightHitbox.SetActive(false);
+        }
+        if (facingAngle < -Mathf.PI * 3 / 4 ||  Mathf.PI * 3 / 4 < facingAngle) // facing down
+        {
+            downHitbox.SetActive(true);
+            Debug.Log("Down attack");
+            yield return 0;// Wait 1 frame
+            downHitbox.SetActive(false);
+        }
 
     }
 }

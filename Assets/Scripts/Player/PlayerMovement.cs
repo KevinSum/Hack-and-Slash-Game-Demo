@@ -93,7 +93,7 @@ public class PlayerMovement : playerControls
 
     }
 
-    float getFacingAngle()
+    public float getFacingAngle()
     {
         return facingAngle;
     }
