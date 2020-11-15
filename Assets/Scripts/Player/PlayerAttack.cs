@@ -45,7 +45,6 @@ public class PlayerAttack : playerControls
             // of the same name in the animator
             animator.SetFloat("moveX", movementInput.x);
             animator.SetFloat("moveY", movementInput.y);
-            playerMovement.spriteFlipCheck();
             StartCoroutine(enableHitbox());
 
             Vector2 direction = new Vector2(movementInput.x, movementInput.y);
@@ -53,10 +52,12 @@ public class PlayerAttack : playerControls
 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
             {
+                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack2", true);
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
             {
+                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack1", true);
             }
             else
