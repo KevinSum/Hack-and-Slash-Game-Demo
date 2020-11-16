@@ -14355,11 +14355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 434.25848
+      value: 540.8171
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2262.6392
+      value: 2818.4946
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16970,6 +16970,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5478392976958909164, guid: 24246af33e325024e8ecda5372859d28, type: 3}
+      propertyPath: attackThrust
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5478392976958909175, guid: 24246af33e325024e8ecda5372859d28, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17054,7 +17058,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478392978146479057}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17136,7 +17140,7 @@ GameObject:
   - component: {fileID: 5478392978146479059}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17169,6 +17173,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 769762149}
   startNode: Start
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: e16af4dac56df444c8eaa4d8bcef7e3f, type: 3}
+  interactable: 0
 --- !u!1001 &5816633921822639652
 PrefabInstance:
   m_ObjectHideFlags: 0

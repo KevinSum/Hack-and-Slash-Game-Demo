@@ -8,8 +8,9 @@ public class PlayerAttack : playerControls
     private PlayerMovement playerMovement;
     private Vector2 movementInput;
     private Rigidbody2D rigidbody;
-    private float facingAngle;
+    [SerializeField] private float facingAngle;
 
+    [SerializeField] private float attackThrust;
     [SerializeField] private GameObject upHitbox;
     [SerializeField] private GameObject leftHitbox;
     [SerializeField] private GameObject rightHitbox;
@@ -45,6 +46,7 @@ public class PlayerAttack : playerControls
             // of the same name in the animator
             animator.SetFloat("moveX", movementInput.x);
             animator.SetFloat("moveY", movementInput.y);
+            
             StartCoroutine(enableHitbox());
 
             Vector2 direction = new Vector2(movementInput.x, movementInput.y);
@@ -52,12 +54,10 @@ public class PlayerAttack : playerControls
 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
             {
-                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack2", true);
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
             {
-                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack1", true);
             }
             else
@@ -76,30 +76,54 @@ public class PlayerAttack : playerControls
         {
             upHitbox.SetActive(true);
             Debug.Log("Up attack");
-            yield return 0;// Wait 1 frame
+            yield return 1;// Wait 1 frame
             upHitbox.SetActive(false);
         }
         if (-Mathf.PI * 3 / 4 < facingAngle && facingAngle < -Mathf.PI / 4) // facing left
         {
             leftHitbox.SetActive(true);
             Debug.Log("Left attack");
-            yield return 0;// Wait 1 frame
+            yield return 1;// Wait 1 frame
             leftHitbox.SetActive(false);
         }
         if (Mathf.PI / 4 < facingAngle && facingAngle < Mathf.PI * 3 / 4) // facing right
         {
             rightHitbox.SetActive(true);
             Debug.Log("Right attack");
-            yield return 0;// Wait 1 frame
+            yield return 1;// Wait 1 frame
             rightHitbox.SetActive(false);
         }
         if (facingAngle < -Mathf.PI * 3 / 4 ||  Mathf.PI * 3 / 4 < facingAngle) // facing down
         {
             downHitbox.SetActive(true);
             Debug.Log("Down attack");
-            yield return 0;// Wait 1 frame
+            yield return 1;// Wait 1 frame
             downHitbox.SetActive(false);
         }
+    }
 
+    // Knockback and damage
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Rigidbody2D enemy = collision.GetComponent<Rigidbody2D>();
+            if (enemy != null)
+            {
+                StartCoroutine(KnockCoroutine(enemy));
+            }
+        }
+    }
+
+    // Apply thrust/knockback to enemy
+    private IEnumerator KnockCoroutine(Rigidbody2D enemy)
+    {
+        Vector2 forceDirection = enemy.transform.position - transform.position;
+        Vector2 force = forceDirection.normalized * attackThrust;
+
+        enemy.velocity = force;
+        yield return new WaitForSeconds(.3f);
+
+        enemy.velocity = new Vector2();
     }
 }

@@ -14,8 +14,8 @@ public class PlayerMovement : playerControls
     private Rigidbody2D playerRigidBody;
     private Animator animator;
 
-    private bool facingRight;
-    private float facingAngle;
+    [SerializeField] private bool facingRight;
+    [SerializeField] private float facingAngle;
 
     private DialogueRunner NPC_dialogueRunner;
     private DialogueRunner objectDialogueRunner;
@@ -40,7 +40,7 @@ public class PlayerMovement : playerControls
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
-        if (movementInput.x !=0 || movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
+        if (movementInput.x !=0 && movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
             facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
 
         // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
@@ -74,8 +74,6 @@ public class PlayerMovement : playerControls
 
     public void spriteFlipCheck() // Flip sprite if needed. Hopefully can remove this in final version
     {
-        facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
-        
         // If facing angle is between 45 and 135 deg, but facingRight is false, then set it true and flip sprite. And vice-versa for all other angles.
         if (facingAngle > Mathf.PI / 4 && facingAngle < Mathf.PI * 3 / 4)
         {
