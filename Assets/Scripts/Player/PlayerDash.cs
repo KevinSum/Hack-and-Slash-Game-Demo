@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDash : PlayerControls
 {
+    Animator playerAnimator;
     PlayerMovement playerMovement;
     Rigidbody2D rigidbody2D;
     [SerializeField] float dashThrust;
@@ -16,6 +17,7 @@ public class PlayerDash : PlayerControls
 
     void Start()
     {
+        playerAnimator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -27,11 +29,15 @@ public class PlayerDash : PlayerControls
 
     private IEnumerator DashCoroutine(Rigidbody2D rigidbody2D)
     {
+        playerAnimator.SetBool("dashing", true);
+        playerAnimator.SetBool("canMove", false);
         Vector2 force = playerMovement.getFacingAngleVec().normalized * dashThrust;
 
         rigidbody2D.velocity = force;
         yield return new WaitForSeconds(invicibleTime);
 
         rigidbody2D.velocity = new Vector2();
+        playerAnimator.SetBool("canMove", true);
+        playerAnimator.SetBool("dashing", false);
     }
 }

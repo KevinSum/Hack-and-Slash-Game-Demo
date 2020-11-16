@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingAngle: 0
-  attackThrust: 0
+  attackThrust: 20
 --- !u!114 &5478392976958909170
 MonoBehaviour:
   m_ObjectHideFlags: 0
