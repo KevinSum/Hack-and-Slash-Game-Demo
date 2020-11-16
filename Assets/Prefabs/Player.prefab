@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashThrust: 20
+  invicibleTime: 0.33
 --- !u!114 &7034052174786118377
 MonoBehaviour:
   m_ObjectHideFlags: 0

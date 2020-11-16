@@ -7,6 +7,7 @@ public class PlayerDash : PlayerControls
     PlayerMovement playerMovement;
     Rigidbody2D rigidbody2D;
     [SerializeField] float dashThrust;
+    [SerializeField] float invicibleTime; // Should probably be set to roll animation length
     protected override void Awake()
     {
         base.Awake();
@@ -29,7 +30,7 @@ public class PlayerDash : PlayerControls
         Vector2 force = playerMovement.getFacingAngleVec().normalized * dashThrust;
 
         rigidbody2D.velocity = force;
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(invicibleTime);
 
         rigidbody2D.velocity = new Vector2();
     }
