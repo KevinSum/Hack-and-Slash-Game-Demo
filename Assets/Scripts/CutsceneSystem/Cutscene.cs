@@ -18,7 +18,11 @@ public class Cutscene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
+        {
             playableDirector.Play();
+            disableTrigger();
+        }
+            
     }
 
     public void SetInCutscene(bool input)
