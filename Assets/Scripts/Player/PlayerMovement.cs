@@ -13,6 +13,7 @@ public class PlayerMovement : playerControls
     private Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
+    [SerializeField] private GameObject sideHitbox;
 
     [SerializeField] private bool facingRight;
     [SerializeField] private float facingAngle;
@@ -48,8 +49,7 @@ public class PlayerMovement : playerControls
 
         {
             // Set animator parameters. The animator will play animation based on these (as well as the 'running' bool parameter)
-            animator.SetFloat("moveX", movementInput.x);
-            animator.SetFloat("moveY", movementInput.y);
+            setAnimatorDirection(movementInput);
 
             // If player can move (e.g. not in attack animation)
             if (animator.GetBool("canMove"))
@@ -81,12 +81,16 @@ public class PlayerMovement : playerControls
             {
                 facingRight = true;
                 spriteRenderer.flipX = false;
+                sideHitbox.transform.localScale = new Vector3(1, 1, 1);
             }
         } else
-        { 
+        {
             if (facingRight)
+            {
                 facingRight = false;
                 spriteRenderer.flipX = true;
+                sideHitbox.transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
 
     }
@@ -94,6 +98,21 @@ public class PlayerMovement : playerControls
     public float getFacingAngle()
     {
         return facingAngle;
+    }
+
+    // Function to send integer values (1, -1 or 0) of x and y movement values to animator. This fixes issues with activating the correct attacking hitboxes (is an issue with the blend trees)
+    public void setAnimatorDirection(Vector2 movementInput)
+    {
+        if(Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+        {
+            animator.SetFloat("moveX", movementInput.x * (1 / Mathf.Abs(movementInput.x)));
+            animator.SetFloat("moveY", 0);
+        }
+        else
+        {
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", movementInput.y * (1 / Mathf.Abs(movementInput.y)));
+        }
     }
 
 }

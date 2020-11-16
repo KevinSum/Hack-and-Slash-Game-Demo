@@ -11,10 +11,6 @@ public class PlayerAttack : playerControls
     [SerializeField] private float facingAngle;
 
     [SerializeField] private float attackThrust;
-    [SerializeField] private GameObject upHitbox;
-    [SerializeField] private GameObject leftHitbox;
-    [SerializeField] private GameObject rightHitbox;
-    [SerializeField] private GameObject downHitbox;
 
 
     protected override void Awake()
@@ -44,10 +40,7 @@ public class PlayerAttack : playerControls
             // This is only to queue state transitions in the animator. The behaviour for what happens when states 
             // are enetered/exited are found in Attacking1 and Attacking 2 scripts, which are bahaviours in the states 
             // of the same name in the animator
-            animator.SetFloat("moveX", movementInput.x);
-            animator.SetFloat("moveY", movementInput.y);
-            
-            StartCoroutine(enableHitbox());
+            playerMovement.setAnimatorDirection(movementInput);
 
             Vector2 direction = new Vector2(movementInput.x, movementInput.y);
             rigidbody.AddForce(direction, ForceMode2D.Impulse);
@@ -69,40 +62,6 @@ public class PlayerAttack : playerControls
         }
     }
 
-    // Enable attack hitboxes according to facing direction
-    IEnumerator enableHitbox()
-    {
-        facingAngle = playerMovement.getFacingAngle();
-
-        if (-Mathf.PI / 4 < facingAngle && facingAngle < Mathf.PI / 4) // facing up
-        {
-            upHitbox.SetActive(true);
-            Debug.Log("Up attack");
-            yield return 1;// Wait 1 frame
-            upHitbox.SetActive(false);
-        }
-        if (-Mathf.PI * 3 / 4 < facingAngle && facingAngle < -Mathf.PI / 4) // facing left
-        {
-            leftHitbox.SetActive(true);
-            Debug.Log("Left attack");
-            yield return 1;// Wait 1 frame
-            leftHitbox.SetActive(false);
-        }
-        if (Mathf.PI / 4 < facingAngle && facingAngle < Mathf.PI * 3 / 4) // facing right
-        {
-            rightHitbox.SetActive(true);
-            Debug.Log("Right attack");
-            yield return 1;// Wait 1 frame
-            rightHitbox.SetActive(false);
-        }
-        if (facingAngle < -Mathf.PI * 3 / 4 ||  Mathf.PI * 3 / 4 < facingAngle) // facing down
-        {
-            downHitbox.SetActive(true);
-            Debug.Log("Down attack");
-            yield return 1;// Wait 1 frame
-            downHitbox.SetActive(false);
-        }
-    }
 
     // Knockback and damage
     private void OnTriggerEnter2D(Collider2D collision)
