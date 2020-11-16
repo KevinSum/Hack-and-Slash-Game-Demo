@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShield : playerControls
+public class PlayerShield : PlayerControls
 {
     bool shielding;
     private Animator animator;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHeal : playerControls
+public class PlayerHeal : PlayerControls
 {
     Animator animator;
     protected override void Awake()

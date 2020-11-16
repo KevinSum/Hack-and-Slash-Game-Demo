@@ -6,7 +6,7 @@ using Yarn.Unity;
 using UnityEngine.Playables;
 
 // System to print dialogue into a dialogue UI when player interacts with something
-public class Dialogue : playerControls
+public class Dialogue : PlayerControls
 {
     [Header("Yarn Spinner Stuff")]
     [SerializeField] protected DialogueRunner dialogueRunner;

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using Yarn.Unity;
 
 // Player movement, movement animation etc
-public class PlayerMovement : playerControls
+public class PlayerMovement : PlayerControls
 {
     [SerializeField] public float speed;
     private SpriteRenderer spriteRenderer;
@@ -17,6 +17,7 @@ public class PlayerMovement : playerControls
 
     [SerializeField] private bool facingRight;
     [SerializeField] private float facingAngle;
+    [SerializeField] private Vector2 facingAngleVec;
 
     private DialogueRunner NPC_dialogueRunner;
     private DialogueRunner objectDialogueRunner;
@@ -42,7 +43,10 @@ public class PlayerMovement : playerControls
     void FixedUpdate()
     {
         if (movementInput.x !=0 && movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
+        {
             facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
+            facingAngleVec = movementInput;
+        }
 
         // Move player if joystick is moved. Don't move and set no animation if currently in dialogue
         if (movementInput != Vector2.zero && !NPC_dialogueRunner.IsDialogueRunning && !objectDialogueRunner.IsDialogueRunning && animator.GetBool("canMove"))
@@ -98,6 +102,11 @@ public class PlayerMovement : playerControls
     public float getFacingAngle()
     {
         return facingAngle;
+    }
+
+    public Vector2 getFacingAngleVec()
+    {
+        return facingAngleVec;
     }
 
     // Function to send integer values (1, -1 or 0) of x and y movement values to animator. This fixes issues with activating the correct attacking hitboxes (is an issue with the blend trees)

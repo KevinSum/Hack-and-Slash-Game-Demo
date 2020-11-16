@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : playerControls
+public class PlayerAttack : PlayerControls
 {
     private Animator animator;
     private PlayerMovement playerMovement;
