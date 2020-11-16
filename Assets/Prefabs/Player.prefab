@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5478392976958909168}
   - component: {fileID: 8397119562212231441}
   - component: {fileID: 5823779512820898892}
+  - component: {fileID: 1743889222460708659}
   - component: {fileID: 7034052174786118377}
   - component: {fileID: 7223632770274305268}
   m_Layer: 0
@@ -325,8 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c7f8ee4e8b17040bb9e634f315b06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingAngle: 0
-  attackThrust: 20
 --- !u!114 &5478392976958909170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +388,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashThrust: 20
   invicibleTime: 0.33
+--- !u!114 &1743889222460708659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478392976958909175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecc130da77b23a4e8f19d19bb7a9e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackThrust: 20
+  damage: 10
 --- !u!114 &7034052174786118377
 MonoBehaviour:
   m_ObjectHideFlags: 0

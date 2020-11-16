@@ -14355,11 +14355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1283.7673
+      value: 1378.4861
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6693.878
+      value: 7187.9404
       objectReference: {fileID: 0}
     - target: {fileID: 5521454954379210991, guid: 8f31f3d2866df2c4286d10a4c36f68c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17181,6 +17181,7 @@ GameObject:
   - component: {fileID: 5478392978146479051}
   - component: {fileID: 1238049066}
   - component: {fileID: 5478392978146479058}
+  - component: {fileID: 5478392978146479060}
   - component: {fileID: 5478392978146479059}
   m_Layer: 0
   m_Name: Boss
@@ -17218,6 +17219,20 @@ MonoBehaviour:
   startNode: Start
   yarnScriptToLoad: {fileID: 2480198943629176163, guid: e16af4dac56df444c8eaa4d8bcef7e3f, type: 3}
   interactable: 0
+--- !u!114 &5478392978146479060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478392978146479057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb7d620923e85148bbc6bc943ca28c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSources:
+  - Player
 --- !u!1001 &5816633921822639652
 PrefabInstance:
   m_ObjectHideFlags: 0
