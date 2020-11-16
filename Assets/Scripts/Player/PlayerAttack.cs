@@ -54,10 +54,12 @@ public class PlayerAttack : playerControls
 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking1"))
             {
+                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack2", true);
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking2"))
             {
+                playerMovement.spriteFlipCheck();
                 animator.SetBool("queueAttack1", true);
             }
             else
