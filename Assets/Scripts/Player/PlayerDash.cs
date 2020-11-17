@@ -29,7 +29,7 @@ public class PlayerDash : PlayerControls
 
     private IEnumerator DashCoroutine(Rigidbody2D rigidbody2D)
     {
-        playerAnimator.SetBool("dashing", true);
+        playerAnimator.SetTrigger("dash");
         playerAnimator.SetBool("canMove", false);
         Vector2 force = playerMovement.getFacingAngleVec().normalized * dashThrust;
 
@@ -38,6 +38,5 @@ public class PlayerDash : PlayerControls
 
         rigidbody2D.velocity = new Vector2();
         playerAnimator.SetBool("canMove", true);
-        playerAnimator.SetBool("dashing", false);
     }
 }

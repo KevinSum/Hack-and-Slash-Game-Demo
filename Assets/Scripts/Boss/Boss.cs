@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator animator;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(animator.GetFloat("health") <= 0)
+        {
+
+        }
     }
 
     void startDialogue()
