@@ -10,7 +10,7 @@ public class PlayerMovement : PlayerControls
 {
     [SerializeField] public float speed;
     private SpriteRenderer spriteRenderer;
-    private Vector2 movementInput;
+    public Vector2 movementInput;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
     [SerializeField] private GameObject sideHitbox;
@@ -42,7 +42,13 @@ public class PlayerMovement : PlayerControls
     // Do physics engine stuff in FixedUpdate(). Everything else in Update()
     void FixedUpdate()
     {
-        if (movementInput.x !=0 && movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
+        //------ OLD MOVEMENT SYSTEM------------
+        movementInput = Vector2.zero;
+        movementInput.x = Input.GetAxisRaw("Horizontal");
+        movementInput.y = Input.GetAxisRaw("Vertical");
+        // -------------------------------
+
+        if (movementInput.x !=0 || movementInput.y != 0) // make sure to set facing angle if joystick is moving/moved
         {
             facingAngle = Mathf.Atan2(movementInput.x, movementInput.y); // Current facing angle in radians
             facingAngleVec = movementInput;
