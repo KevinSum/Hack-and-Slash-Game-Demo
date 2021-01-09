@@ -20,7 +20,10 @@ public class PlayerHeal : PlayerControls
     // Update is called once per frame
     void Update()
     {
-        
+        // ----- OLD DIALOGUE SYSTEM -------------
+        if (Input.GetButtonDown("heal"))
+            Heal();
+        //------------------------
     }
     void Heal()
     {

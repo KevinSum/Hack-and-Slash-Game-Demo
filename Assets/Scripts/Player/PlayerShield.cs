@@ -23,7 +23,9 @@ public class PlayerShield : PlayerControls
     // Update is called once per frame
     void Update()
     {
-        
+        // ----- OLD DIALOGUE SYSTEM -------------
+        setShielding(Input.GetButton("shield"));
+        //------------------------
     }
 
     void setShielding(bool input)

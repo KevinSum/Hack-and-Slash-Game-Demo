@@ -22,6 +22,14 @@ public class PlayerDash : PlayerControls
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        // ----- OLD DIALOGUE SYSTEM -------------
+        if (Input.GetButtonDown("dash"))
+            Dash();
+        //------------------------
+    }
+
     void Dash()
     {
         StartCoroutine(DashCoroutine(rigidbody2D));

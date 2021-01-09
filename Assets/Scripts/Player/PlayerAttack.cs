@@ -25,7 +25,14 @@ public class PlayerAttack : PlayerControls
     // Update is called once per frame
     void Update()
     {
-        
+        // ----- OLD DIALOGUE SYSTEM -------------
+        movementInput = Vector2.zero;
+        movementInput.x = Input.GetAxisRaw("Horizontal");
+        movementInput.y = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetButtonDown("attack"))
+            AttackInput();
+        //------------------------
     }
 
     private void AttackInput()
