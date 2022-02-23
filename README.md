@@ -1,1 +1,1 @@
-![Hack and Slash](/HackSlash.gif) `<br/>`{=html}
+![Hack and Slash](/HackSlash.gif)

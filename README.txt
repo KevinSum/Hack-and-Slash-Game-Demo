@@ -1,1 +1,0 @@
-![Hack and Slash](/HackSlash.gif)
