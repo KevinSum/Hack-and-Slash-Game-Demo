@@ -1,1 +1,1 @@
-![](HackSlash.gif)
+![](https://github.com/KevinSum/Hack-and-Slash-Game-Demo/blob/master/HackSlash.gif)
